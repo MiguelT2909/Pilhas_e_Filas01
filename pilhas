@@ -1,0 +1,44 @@
+package Fila;
+
+public class FilaArray {
+    private int[] elementos;
+    private int inicio;
+    private int fim;
+    private int tamanho;
+
+    public FilaArray(int capacidade) {
+        elementos = new int[capacidade];
+        inicio = 0;
+        fim = -1;
+        tamanho = 0;
+    }
+
+    public void enqueue(int valor) {
+        if (tamanho == elementos.length) {
+            System.out.println("Fila cheia! Não foi possível inserir " + valor);
+        } else {
+            fim = (fim + 1) % elementos.length;
+            elementos[fim] = valor;
+            tamanho++;
+            System.out.println("Enfileirado: " + valor);
+        }
+    }
+
+    public int dequeue() {
+        if (verificar()) {
+            System.out.println("Fila vazia! Não há elementos para rem…
+package Fila;
+
+public class Main {
+    public static void main(String[] args) {
+        FilaArray f1 = new FilaArray(5);
+        f1.enqueue(10);
+        f1.enqueue(20);
+        f1.enqueue(30);
+        System.out.println("Primeiro elemento (peek): " + f1.peek());
+        while (!f1.verificar()) {
+            int removido = f1.dequeue();
+            System.out.println("Removido: " + removido);
+        }
+    }
+}
