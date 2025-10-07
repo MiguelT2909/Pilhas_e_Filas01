@@ -1,44 +1,111 @@
-package Fila;
-
-public class FilaArray {
-    private int[] elementos;
-    private int inicio;
-    private int fim;
-    private int tamanho;
-
-    public FilaArray(int capacidade) {
-        elementos = new int[capacidade];
-        inicio = 0;
-        fim = -1;
-        tamanho = 0;
-    }
-
-    public void enqueue(int valor) {
-        if (tamanho == elementos.length) {
-            System.out.println("Fila cheia! Não foi possível inserir " + valor);
-        } else {
-            fim = (fim + 1) % elementos.length;
-            elementos[fim] = valor;
-            tamanho++;
-            System.out.println("Enfileirado: " + valor);
-        }
-    }
-
-    public int dequeue() {
-        if (verificar()) {
-            System.out.println("Fila vazia! Não há elementos para rem…
-package Fila;
-
-public class Main {
-    public static void main(String[] args) {
-        FilaArray f1 = new FilaArray(5);
-        f1.enqueue(10);
-        f1.enqueue(20);
-        f1.enqueue(30);
-        System.out.println("Primeiro elemento (peek): " + f1.peek());
-        while (!f1.verificar()) {
-            int removido = f1.dequeue();
-            System.out.println("Removido: " + removido);
-        }
-    }
-}
+///Questão 1:
+///
+/// A função mais adequada é o de Pilha, cada ação do usuário como digitar uma letra ou apagar um texto, é empilhada na pilha.Quando o usuário aciona “Desfazer”, a pilha retira o último elemento adicionado e desfaz essa ação, por isso a função LIFO é mais adequado.
+///
+/// Questão 2:
+///
+/// O melhor método para imprimir os exames é no formato de Pilha, pos o hospital quer imprimir do último exame para o primeiro.O melhor implementação seria de lista encadeada, ja que ela não possui um tamanho fixo e facilita o processo de adicionar e remover do topo sem retirar elementos.
+///
+/// Questão 3:
+///
+/// O sistemas dará prioridade para as tarefas urgentes que estão na Pilha, que vão sendo empilhado ao longo que as tarefas vão entrando na Fila, quando a Pilha for terminada o sistemas voltará ha fazer as tarefas na fila.
+///
+/// Obs: Não entende muito bem a pergunta
+/// package Pilha;
+///exercicio4
+/// public class PilhaArray {
+///
+///     private int[] elementos;
+///     private int topo;
+///
+///     public PilhaArray(int capacidade) {
+///         elementos = new int[capacidade];
+///         topo = -1;
+///     }
+///
+///     public void push(int valor) {
+///         if (topo == elementos.length - 1) {
+///             System.out.println("Pilha cheia! Não foi possível inserir.");
+///         } else {
+///             topo++;
+///             elementos[topo] = valor;
+///         }
+///     }
+///
+///     public int pop() {
+///         if (verificar()) {
+///             System.out.println("Pilha vazia! Não há o que remover.");
+///             return -1;
+///         } else {
+///             int valor = elementos[topo];
+///             topo--;
+///             return valor;
+///         }
+///     }
+///
+///     public int peek() {
+///         if (verificar()) {
+///         …
+/// package Pilha;
+///
+/// public class Main {
+///     public static void main(String[] args) {
+///         PilhaArray p1 = new PilhaArray(5);
+///
+///         p1.push(10);
+///         p1.push(20);
+///         p1.push(30);
+///
+///         System.out.println("Topo atual: " + p1.peek());
+///
+///         while (!p1.verificar()) {
+///             int removido = p1.pop();
+///             System.out.println("Removido: " + removido);
+///         }
+///     }
+/// }
+//exercicio5
+//ackage Fila;
+//
+//public class FilaArray {
+//    private int[] elementos;
+//    private int inicio;
+//    private int fim;
+//    private int tamanho;
+//
+//    public FilaArray(int capacidade) {
+//        elementos = new int[capacidade];
+//        inicio = 0;
+//        fim = -1;
+//        tamanho = 0;
+//    }
+//
+//    public void enqueue(int valor) {
+//        if (tamanho == elementos.length) {
+//            System.out.println("Fila cheia! Não foi possível inserir " + valor);
+//        } else {
+//            fim = (fim + 1) % elementos.length;
+//            elementos[fim] = valor;
+//            tamanho++;
+//            System.out.println("Enfileirado: " + valor);
+//        }
+//    }
+//
+//    public int dequeue() {
+//        if (verificar()) {
+//            System.out.println("Fila vazia! Não há elementos para rem…
+//package Fila;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        FilaArray f1 = new FilaArray(5);
+//        f1.enqueue(10);
+//        f1.enqueue(20);
+//        f1.enqueue(30);
+//        System.out.println("Primeiro elemento (peek): " + f1.peek());
+//        while (!f1.verificar()) {
+//            int removido = f1.dequeue();
+//            System.out.println("Removido: " + removido);
+//        }
+//    }
+//}
